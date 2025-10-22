@@ -1,0 +1,311 @@
+uz:
+  start_message: |
+    👋 <b>Assalomu alaykum!</b>
+    
+    🎬 <b>Meteordub</b>ga xush kelibsiz - bu sizning shaxsiy dublyaj va tarjima yordamchingiz!
+    
+    📺 Keling, birgalikda ajoyib kontent yarataylik!
+    
+    Iltimos, tilni tanlang 👇
+  
+  main_message: |
+    🏠 <b>Bosh menyu</b>
+    
+    ✨ Sizga qanday yordam bera olaman?
+    
+    💎 <b>Premium obuna</b> bilan cheksiz imkoniyatlarga ega bo'ling!
+    
+    Quyidagi tugmalardan birini tanlang 👇
+  
+  payment_info: |
+    💳 <b>To'lov haqida ma'lumot</b>
+    
+    📦 <b>Meteordub Premium</b>
+    💰 Narxi: <b>50,000 so'm/oy</b>
+    
+    ✅ Premium imkoniyatlari:
+    • 🎬 Cheksiz dublyaj
+    • 🌐 100+ tilga tarjima
+    • ⚡ Tez ishlov berish
+    • 🎨 Professional sifat
+    • 🔒 Maxfiylik kafolati
+    • 📱 24/7 texnik yordam
+    
+    Davom etamizmi? 🚀
+  
+  email_ask: |
+    📧 <b>Elektron pochta manzili</b>
+    
+    Iltimos, email manzilingizni kiriting.
+    Bu sizga chekni yuborish uchun kerak bo'ladi 📨
+    
+    Masalan: <code>example@gmail.com</code>
+  
+  payment_type: |
+    💳 <b>To'lov usulini tanlang</b>
+    
+    Qulayingiz kelgan to'lov tizimini tanlang 👇
+    
+    🔐 Barcha to'lovlar xavfsiz!
+  
+  success_message: |
+    🎉 <b>Tabriklaymiz!</b>
+    
+    ✅ To'lovingiz muvaffaqiyatli qabul qilindi!
+    
+    📧 Chek <b>:email</b> manziliga yuborildi
+    
+    🎁 Premium obunangiz faollashtirildi!
+    
+    💫 Endi siz barcha premium imkoniyatlardan foydalanishingiz mumkin!
+    
+    Ajoyib kontent yaratishda omad tilaymiz! 🚀
+  
+  about_meteor: |
+    🌟 <b>Meteordub haqida</b>
+    
+    🎬 <b>Meteordub</b> - bu sun'iy intellekt asosida ishlaydigan dublyaj va tarjima platformasi.
+    
+    💡 <b>Nima qila olamiz:</b>
+    • 🎤 Professional dublyaj
+    • 🌍 100+ tilga tarjima
+    • ⚡ Tez va sifatli natija
+    • 🎨 Yuqori sifatli audio
+    
+    🚀 Bizning maqsadimiz - kontentingizni global qilish!
+    
+    💎 Premium obuna bilan cheksiz imkoniyatlarga ega bo'ling!
+  
+  about_developer: |
+    👨‍💻 <b>Dasturchi haqida</b>
+    
+    🛠 Bu bot yaratilgan: <b>@UZDeveloper</b>
+    
+    💼 Biz bilan bog'lanish:
+    📧 Email: support@meteordub.uz
+    📱 Telegram: @meteordub_support
+    
+    🤝 Hamkorlik va savol-takliflar uchun murojaat qiling!
+    
+    ⭐ Sizning fikr-mulohazalaringiz biz uchun muhim!
+  
+  buttons:
+    buy_premium_button: "💎 Premium sotib olish"
+    gift_premium_button: "🎁 Premium sovg'a qilish"
+    about_meteor_button: "ℹ️ Meteordub haqida"
+    about_developer_button: "👨‍💻 Dasturchi haqida"
+    confirm_button: "✅ Tasdiqlash"
+    decline_button: "❌ Bekor qilish"
+    click_button: "💳 Click"
+    payme_button: "💳 Payme"
+    back_button: "◀️ Orqaga"
+    back_button_2: "◀️ Orqaga qaytish"
+    purchase_button: "💰 To'lash"
+
+en:
+  start_message: |
+    👋 <b>Hello there!</b>
+    
+    🎬 Welcome to <b>Meteordub</b> - your personal dubbing and translation assistant!
+    
+    📺 Let's create amazing content together!
+    
+    Please select your language 👇
+  
+  main_message: |
+    🏠 <b>Main Menu</b>
+    
+    ✨ How can I help you today?
+    
+    💎 Get unlimited possibilities with <b>Premium subscription</b>!
+    
+    Choose an option below 👇
+  
+  payment_info: |
+    💳 <b>Payment Information</b>
+    
+    📦 <b>Meteordub Premium</b>
+    💰 Price: <b>50,000 UZS/month</b>
+    
+    ✅ Premium features:
+    • 🎬 Unlimited dubbing
+    • 🌐 Translation to 100+ languages
+    • ⚡ Fast processing
+    • 🎨 Professional quality
+    • 🔒 Privacy guaranteed
+    • 📱 24/7 technical support
+    
+    Ready to continue? 🚀
+  
+  email_ask: |
+    📧 <b>Email Address</b>
+    
+    Please enter your email address.
+    We'll send your receipt here 📨
+    
+    Example: <code>example@gmail.com</code>
+  
+  payment_type: |
+    💳 <b>Choose Payment Method</b>
+    
+    Select your preferred payment system 👇
+    
+    🔐 All payments are secure!
+  
+  success_message: |
+    🎉 <b>Congratulations!</b>
+    
+    ✅ Your payment was successful!
+    
+    📧 Receipt sent to <b>:email</b>
+    
+    🎁 Your Premium subscription is now active!
+    
+    💫 You can now enjoy all premium features!
+    
+    Good luck creating amazing content! 🚀
+  
+  about_meteor: |
+    🌟 <b>About Meteordub</b>
+    
+    🎬 <b>Meteordub</b> is an AI-powered dubbing and translation platform.
+    
+    💡 <b>What we can do:</b>
+    • 🎤 Professional dubbing
+    • 🌍 Translation to 100+ languages
+    • ⚡ Fast and quality results
+    • 🎨 High-quality audio
+    
+    🚀 Our goal is to make your content global!
+    
+    💎 Get unlimited possibilities with Premium subscription!
+  
+  about_developer: |
+    👨‍💻 <b>About the Developer</b>
+    
+    🛠 This bot was created by: <b>@UZDeveloper</b>
+    
+    💼 Contact us:
+    📧 Email: support@meteordub.uz
+    📱 Telegram: @meteordub_support
+    
+    🤝 Feel free to reach out for partnerships and suggestions!
+    
+    ⭐ Your feedback is important to us!
+  
+  buttons:
+    buy_premium_button: "💎 Buy Premium"
+    gift_premium_button: "🎁 Gift Premium"
+    about_meteor_button: "ℹ️ About Meteordub"
+    about_developer_button: "👨‍💻 About Developer"
+    confirm_button: "✅ Confirm"
+    decline_button: "❌ Cancel"
+    click_button: "💳 Click"
+    payme_button: "💳 Payme"
+    back_button: "◀️ Back"
+    back_button_2: "◀️ Go Back"
+    purchase_button: "💰 Pay"
+
+ru:
+  start_message: |
+    👋 <b>Здравствуйте!</b>
+    
+    🎬 Добро пожаловать в <b>Meteordub</b> - ваш личный помощник по дубляжу и переводу!
+    
+    📺 Давайте создавать потрясающий контент вместе!
+    
+    Пожалуйста, выберите язык 👇
+  
+  main_message: |
+    🏠 <b>Главное меню</b>
+    
+    ✨ Чем я могу вам помочь?
+    
+    💎 Получите неограниченные возможности с <b>Premium подпиской</b>!
+    
+    Выберите опцию ниже 👇
+  
+  payment_info: |
+    💳 <b>Информация об оплате</b>
+    
+    📦 <b>Meteordub Premium</b>
+    💰 Цена: <b>50,000 сум/месяц</b>
+    
+    ✅ Возможности Premium:
+    • 🎬 Безлимитный дубляж
+    • 🌐 Перевод на 100+ языков
+    • ⚡ Быстрая обработка
+    • 🎨 Профессиональное качество
+    • 🔒 Гарантия конфиденциальности
+    • 📱 Техподдержка 24/7
+    
+    Продолжим? 🚀
+  
+  email_ask: |
+    📧 <b>Электронная почта</b>
+    
+    Пожалуйста, введите ваш email адрес.
+    Мы отправим вам чек сюда 📨
+    
+    Например: <code>example@gmail.com</code>
+  
+  payment_type: |
+    💳 <b>Выберите способ оплаты</b>
+    
+    Выберите удобную платёжную систему 👇
+    
+    🔐 Все платежи защищены!
+  
+  success_message: |
+    🎉 <b>Поздравляем!</b>
+    
+    ✅ Ваш платёж успешно принят!
+    
+    📧 Чек отправлен на <b>:email</b>
+    
+    🎁 Ваша Premium подписка активирована!
+    
+    💫 Теперь вы можете пользоваться всеми премиум возможностями!
+    
+    Удачи в создании потрясающего контента! 🚀
+  
+  about_meteor: |
+    🌟 <b>О Meteordub</b>
+    
+    🎬 <b>Meteordub</b> - это платформа для дубляжа и перевода на основе ИИ.
+    
+    💡 <b>Что мы умеем:</b>
+    • 🎤 Профессиональный дубляж
+    • 🌍 Перевод на 100+ языков
+    • ⚡ Быстрый и качественный результат
+    • 🎨 Высококачественное аудио
+    
+    🚀 Наша цель - сделать ваш контент глобальным!
+    
+    💎 Получите неограниченные возможности с Premium подпиской!
+  
+  about_developer: |
+    👨‍💻 <b>О разработчике</b>
+    
+    🛠 Этот бот создан: <b>@UZDeveloper</b>
+    
+    💼 Связаться с нами:
+    📧 Email: support@meteordub.uz
+    📱 Telegram: @meteordub_support
+    
+    🤝 Обращайтесь по вопросам сотрудничества и предложений!
+    
+    ⭐ Ваши отзывы важны для нас!
+  
+  buttons:
+    buy_premium_button: "💎 Купить Premium"
+    gift_premium_button: "🎁 Подарить Premium"
+    about_meteor_button: "ℹ️ О Meteordub"
+    about_developer_button: "👨‍💻 О разработчике"
+    confirm_button: "✅ Подтвердить"
+    decline_button: "❌ Отменить"
+    click_button: "💳 Click"
+    payme_button: "💳 Payme"
+    back_button: "◀️ Назад"
+    back_button_2: "◀️ Вернуться назад"
+    purchase_button: "💰 Оплатить"
