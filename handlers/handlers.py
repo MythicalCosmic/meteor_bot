@@ -13,6 +13,7 @@ from aiogram.types import FSInputFile
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import re
 import os
+from aiogram.types import InputFile
 
 PRICE=25000
 router = Router()
@@ -148,85 +149,67 @@ async def handle_email_button(message: Message, state: FSMContext, bot: Bot):
     try:
         user_id = message.from_user.id
         language = get_user_language(user_id=user_id)
-        email = message.text.strip()
+        if message.text:
+            email = message.text.strip()
+        else:
+            await message.reply("⚠️ Please send a valid email.")
+            return
         await state.update_data(email=email)
         set_user_state(user_id=user_id, state=UserStates.payment_type.state)
         await message.reply(
-            get_translation('payment_type', language=language),
-            reply_markup=payment_options_keyboard(language=language),
+            get_translation('payment_image', language=language),
+            reply_markup=back_button(language=language),
             parse_mode='HTML'
         )
         await state.set_state(UserStates.payment_type)
     except Exception as e:
         await bot.send_message(chat_id=ADMIN_ID, text=f"Error occured on handle_email_button input: {e}")
 
-@router.message(lambda message: message.text == get_button_text('click_button', get_user_language(message.from_user.id)), StateFilter(UserStates.payment_type))
-async def handle_click_payment(message: Message, bot: Bot, state: FSMContext):
+@router.message(StateFilter(UserStates.payment_type))
+async def handle_payment_image_handler(message: Message, bot: Bot, state: FSMContext):
     try:
-        prices = [LabeledPrice(label="Meteordub Premium Subscription", amount=5000000)]
         user_id = message.from_user.id
+        user = message.from_user
         language = get_user_language(user_id=user_id)
-        await message.reply_invoice(
-            title=f"Meteordub Premium",
-            description="Premium orqali websiteda maksimal imkoniyatlardan foydalaning.",
-            payload=f"CLICK",
-            provider_token=CLICK_TOKEN,
-            currency="UZS",
-            prices=prices,
-            start_parameter="premium_upgrade",
-            reply_markup=purchase_button()
-        )
-    except Exception as e:
-        await bot.send_message(chat_id=ADMIN_ID, text=f"Error occured on handle_click_payment input: {e}")
+        image = message.photo[-1]
+        file_info = await bot.get_file(image.file_id)
+        file_path = file_info.file_path
 
-@router.message(lambda message: message.text == get_button_text('payme_button', get_user_language(message.from_user.id)), StateFilter(UserStates.payment_type))
-async def handle_payme_payment(message: Message, bot: Bot, state: FSMContext):
-    try:
-        prices = [LabeledPrice(label="Meteordub Premium Subscription", amount=5000000)]
-        user_id = message.from_user.id
-        language = get_user_language(user_id=user_id)
-        await message.reply_invoice(
-            title=f"Meteordub Premium",
-            description="Premium orqali websiteda maksimal imkoniyatlardan foydalaning.",
-            payload=f"PAYME",
-            provider_token=PAYME_TOKEN,
-            currency="UZS",
-            prices=prices,
-            start_parameter="premium_upgrade",
-            reply_markup=purchase_button()
-        )
-    except Exception as e:
-        await bot.send_message(chat_id=ADMIN_ID, text=f"Error occured on handle_payme_payment input: {e}")
-
-
-@router.pre_checkout_query(lambda _: True)
-async def pre_checkout_handler(pre_checkout_query: PreCheckoutQuery, bot: Bot):
-    try:
-        await bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True)
-    except Exception as e:
-        await bot.send_message(chat_id=ADMIN_ID, text=f"Error occured on pre_checkout_handler input: {e}")
-
-@router.message(lambda message: message.successful_payment is not None, StateFilter(UserStates.payment_type))
-async def successful_payment_handler(message: Message, bot: Bot, state: FSMContext):
-    user_id = message.from_user.id
-    language = get_user_language(user_id=user_id)
-    try:
-        total_price = message.successful_payment.total_amount / 100
-        payment_type = message.successful_payment.invoice_payload
+        os.makedirs("./media/payments", exist_ok=True)
+        filename = f"./media/payments/{user_id}_{image.file_id}.jpg"
+        await bot.download_file(file_path, destination=filename)
         data = await state.get_data()
-        email = data.get("email")
-        payment_movement_id = add_to_payment_movements(
-            message.from_user.id,
-            email,
-            total_price,
-            payment_type
+        email = data.get("email", "❌ Not provided")
+        sent_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        photo_file = FSInputFile(filename)
+        await message.reply(
+            get_translation('payment_success', language),
+            reply_markup=main_keyboard(language),
+            parse_mode='HTML'
         )
-        set_user_state(user_id, UserStates.start.state)
-        await bot.send_message(ADMIN_ID, format_payment_success(message, total_price, payment_type, email, payment_movement_id))
-        await message.reply(get_translation('success_message', language=language).replace(':email',email), parse_mode='HTML', reply_markup=main_keyboard(language=language))
-        await state.set_state(UserStates.start) 
+        admin_text = (
+            f"💳 <b>New Payment Recorded</b>\n\n"
+            f"👤 <b>Name:</b> {user.full_name or '—'}\n"
+            f"🔗 <b>Username:</b> @{user.username if user.username else '—'}\n"
+            f"🆔 <b>User ID:</b> <code>{user_id}</code>\n"
+            f"🌐 <b>Language:</b> {language}\n"
+            f"📧 <b>Email:</b> {email}\n"
+            f"🕒 <b>Sent at:</b> {sent_at}\n"
+        )
+        await bot.send_photo(
+            chat_id=ADMIN_ID,
+            photo=photo_file,
+            caption=admin_text,
+            parse_mode='HTML'
+        )
+        set_user_state(user_id=user_id, state=UserStates.main.state)
+        await state.set_state(UserStates.main)
     except Exception as e:
-        await bot.send_message(chat_id=ADMIN_ID, text=f"Error occured on successful_payment_handler input: {e}")
+        await bot.send_message(
+            chat_id=ADMIN_ID,
+            text=f"⚠️ Error in handle_payment_info_image:\n<code>{e}</code>",
+            parse_mode='HTML'
+        )
 
 
 @router.message(lambda message: message.text == get_button_text('decline_button', get_user_language(message.from_user.id)), StateFilter(UserStates.payment_info))
