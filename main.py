@@ -9,10 +9,12 @@ from config.settings import WEBHOOK, WEBHOOK_URL
 app = FastAPI()
 
 @app.post("/webhook")
-async def webhook(update: dict):
-    tg_update = Update(**update)
+async def webhook(request: Request):
+    data = await request.json()
+    tg_update = Update(**data)
     await dp.feed_update(bot, tg_update)
-    return {"status": "ok"}
+    return {"ok": True}
+
 
 
 async def on_startup():
