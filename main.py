@@ -1,7 +1,7 @@
 import logging
 import uvicorn
 import asyncio
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from aiogram.types import Update
 from config.config import bot, dp
 from config.settings import WEBHOOK, WEBHOOK_URL
